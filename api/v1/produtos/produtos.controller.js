@@ -1,4 +1,4 @@
-const db = require('../../config/database'); // Altere conforme a configuração do seu banco
+const db = require('../../config/database'); 
 
 // Função para cadastrar um produto
 exports.cadastrarProduto = async (req, res) => {

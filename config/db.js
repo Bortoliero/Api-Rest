@@ -8,7 +8,7 @@ const sequelizeConfig = {
     logging: console.log
 };
 
-//database, usuario, senha
+
 const sequelize = new Sequelize(envConfig.database.name, 
                                 envConfig.database.user,
                                 envConfig.database.password, 

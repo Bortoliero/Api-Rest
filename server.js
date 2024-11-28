@@ -1,6 +1,7 @@
 const Hapi = require("@hapi/hapi");
 const routes = require("./config/routes");
 const config = require('./config/envs-config');
+const produtosRoutes = require('./api/produtos/produtos.routes');
 
 
 const server = Hapi.server({
@@ -8,7 +9,10 @@ const server = Hapi.server({
     host: config.host
 });
 
-//apresenta as rotas http mapeadas ao hapi
+
 routes.forEach((path) => server.route(path));
+
+app.use('/api/produtos', produtosRoutes);
+
 
 module.exports = server;
