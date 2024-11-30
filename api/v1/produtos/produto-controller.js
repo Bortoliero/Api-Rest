@@ -17,6 +17,7 @@ const create = async (request, h) => {
     
 }
 
+<<<<<<< HEAD
 const deleteById = async (request, h) => {
     const productId = request.params.id;
     
@@ -28,7 +29,26 @@ const deleteById = async (request, h) => {
         console.log(error)
     }
 }
+=======
+const findById = async (request, h) => {
+    
+    const productId = request.params.id;
+
+    return h.response(await business.findById(productId));
+}
+
+const getProdutos = async (request, h) => {
+    
+    const {query} = request;
+
+    const result = await business.list(query);
+    return h.response(result).code(200);
+}
+
+>>>>>>> 0d6992512d9fe156e2db7ae7b6c11ec9d895b755
 
 module.exports = {
-    create
+    create,
+    findById,
+    getProdutos
 };
