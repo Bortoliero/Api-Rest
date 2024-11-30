@@ -23,11 +23,24 @@ const getProdutos = async (request, h) => {
     return h.response(result).code(200);
 }
 
+const findByCategoria = async (categoria) => {
+    return produtoModel.findAll({
+        include: [{
+            model: Categoria,
+            required: true,
+            where: {
+                name: { [Op.iLike]: `${categoria}%` }
+            }
+        }]
+    });
+};
+
+
 const deleteById = async (request, h) => {
-    const productId = request.params.id;
+    const produtoId = request.params.id;
     
     try {
-        await business.deleteById(productId);
+        await business.deleteById(produtoId);
 
         return h.response({}).code(204);
     } catch (error) {
@@ -37,9 +50,9 @@ const deleteById = async (request, h) => {
 
 const findById = async (request, h) => {
     
-    const productId = request.params.id;
+    const produtotId = request.params.id;
 
-    return h.response(await business.findById(productId));
+    return h.response(await business.findById(produtoId));
 }
 
 
@@ -47,5 +60,6 @@ module.exports = {
     create,
     findById,
     getProdutos,
-    deleteById
+    deleteById,
+    findByCategoria
 };

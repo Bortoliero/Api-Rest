@@ -36,6 +36,6 @@ const produto = database.sequelize.define('Produto', {
     tableName: 'tb_produto'
 });
 
-Product.belongsTo(Category, {foreignKey: 'categoryId'});
+Produto.belongsTo(Categoria, {foreignKey: 'categoriaId'});
 
 module.exports = Produto;

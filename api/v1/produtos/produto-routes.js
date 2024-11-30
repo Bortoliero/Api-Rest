@@ -15,17 +15,17 @@ const routes = [
     },
     {
         method: "GET",
-        path: "/v1/products",
+        path: "/v1/produtos",
         options: {
             tags: ['api'],
             description: 'List of products',
-            handler: getProducts,
-            validate: schema.getProducts
+            handler: getProdutos,
+            validate: schema.getProdutos
         }
     },
     {
         method: "GET",
-        path: "/v1/products/{id}",
+        path: "/v1/produtos/{id}",
         options: {
             tags: ['api'],
             description: 'Create a product',
@@ -35,7 +35,7 @@ const routes = [
     },
     {
         method: "DELETE",
-        path: "/v1/products/{id}",
+        path: "/v1/produtos/{id}",
         options: {
             tags: ['api'],
             handler: deleteById,
