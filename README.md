@@ -1,5 +1,7 @@
 # Web2024-2
 
+Alunos: Gabriel Abramovick e Fabio Antimo Salvatore
+
 ## Descrição
 
 Este é um projeto básico em Node.js utilizando o framework Hapi.js para gerenciamento de rotas e o Joi para validação de dados, construido na disciplina de Laboratório Web da Fatec Franca.
