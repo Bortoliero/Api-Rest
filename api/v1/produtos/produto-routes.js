@@ -33,6 +33,15 @@ const routes = [
             validate: schema.getById
         }
     },
+    {
+        method: "DELETE",
+        path: "/v1/products/{id}",
+        options: {
+            tags: ['api'],
+            handler: deleteById,
+            validate: schema.deleteById
+        }
+    },
 ];
 
 module.exports = routes;
