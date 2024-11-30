@@ -15,7 +15,24 @@ const create = async (request, h) => {
     }
 }
 
+const findById = async (request, h) => {
+    
+    const productId = request.params.id;
+
+    return h.response(await business.findById(productId));
+}
+
+const getProdutos = async (request, h) => {
+    
+    const {query} = request;
+
+    const result = await business.list(query);
+    return h.response(result).code(200);
+}
+
 
 module.exports = {
-    create
+    create,
+    findById,
+    getProdutos
 };
