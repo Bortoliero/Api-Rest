@@ -1,6 +1,6 @@
 const productModel = require('./product-model');
 const {Op} = require('sequelize');
-const Category = require('../categoria/categoria-model');
+const Categoria = require('../categoria/categoria-model');
 
 
 
@@ -13,7 +13,7 @@ const findAll = async (filter) => {
 
     return productModel.findAll({
         include: [{
-            model: Category,
+            model: Categoria,
             required: true //inner
         }],
         where: {
@@ -26,7 +26,7 @@ const findAll = async (filter) => {
 const findById = async (id) => {
     return productModel.findOne({
         include: [ {
-            model: Category,
+            model: Categoria,
             required: false //left
         }],
         where: {

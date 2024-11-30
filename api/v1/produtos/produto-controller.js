@@ -6,7 +6,7 @@ const create = async (request, h) => {
     const {payload} = request;
 
     try {
-        payload.categoryId = payload.category.id;
+        payload.categoriaId = payload.categoria.id;
         const result = await business.create(payload);
 
         return h.response(result).code(201);
