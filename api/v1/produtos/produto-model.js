@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 const database = require('../../../config/db');
-const Category = require('../category/category-model');
+const Category = require('../categoria-model');
 
-const Product = database.sequelize.define('Product', {
+const Product = database.sequelize.define('Produto', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -38,4 +38,4 @@ const Product = database.sequelize.define('Product', {
 
 Product.belongsTo(Category, {foreignKey: 'categoryId'});
 
-module.exports = Produc
+module.exports = Produto;
