@@ -12,9 +12,7 @@ const create = async (request, h) => {
         return h.response(result).code(201);
     } catch(error) {
         console.log(error);
-    }
-
-    
+    }    
 }
 
 const getProdutos = async (request, h) => {

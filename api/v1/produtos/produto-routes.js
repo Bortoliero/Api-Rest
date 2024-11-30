@@ -12,7 +12,27 @@ const routes = [
             handler: produtosController.createProdutos,
             validate: produtosSchema.createProdutos
         }
-    }
+    },
+    {
+        method: "GET",
+        path: "/v1/products",
+        options: {
+            tags: ['api'],
+            description: 'List of products',
+            handler: getProducts,
+            validate: schema.getProducts
+        }
+    },
+    {
+        method: "GET",
+        path: "/v1/products/{id}",
+        options: {
+            tags: ['api'],
+            description: 'Create a product',
+            handler: findById,
+            validate: schema.getById
+        }
+    },
 ];
 
 module.exports = routes;
