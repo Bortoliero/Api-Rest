@@ -13,8 +13,21 @@ const create = async (request, h) => {
     } catch(error) {
         console.log(error);
     }
+
+    
 }
 
+const deleteById = async (request, h) => {
+    const productId = request.params.id;
+    
+    try {
+        await business.deleteById(productId);
+
+        return h.response({}).code(204);
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 module.exports = {
     create
