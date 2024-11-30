@@ -1,17 +1,17 @@
-const productModel = require('./product-model');
+const produtoModel = require('./produto-model');
 const {Op} = require('sequelize');
 const Category = require('../category/category-model');
 
 
 
-const save = async (product) => {
-    return productModel.create(product);
+const save = async (produto) => {
+    return produtoModel.create(produto);
 }
 
 const findAll = async (filter) => {
     const {name, quantity} = filter;
 
-    return productModel.findAll({
+    return produtoModel.findAll({
         include: [{
             model: Category,
             required: true //inner
@@ -24,7 +24,7 @@ const findAll = async (filter) => {
 }
 
 const findById = async (id) => {
-    return productModel.findOne({
+    return produtoModel.findOne({
         include: [ {
             model: Category,
             required: false //left
@@ -37,7 +37,7 @@ const findById = async (id) => {
 
 const deleteById = async (id) => {
 
-    productModel.destroy({
+    produtoModel.destroy({
         where: {
             id: id
         }

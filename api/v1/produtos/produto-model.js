@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const database = require('../../../config/db');
 const Category = require('../categoria-model');
 
-const Product = database.sequelize.define('Produto', {
+const produto = database.sequelize.define('Produto', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -36,6 +36,6 @@ const Product = database.sequelize.define('Produto', {
     tableName: 'tb_produto'
 });
 
-Product.belongsTo(Category, {foreignKey: 'categoryId'});
+produto.belongsTo(Category, {foreignKey: 'categoryId'});
 
 module.exports = Produto;
